@@ -4,14 +4,13 @@ var Arknights = {
 	},
 	F_BG_PARRALAX_INI: function () {
 		$(window).on('load', function () {
-			var cover = {};Arknights
-			cover.t = $('#cover');
+			var cover = {};
+			cover.t = $('#bg-img');
 			cover.w = cover.t[0].naturalWidth;
 			cover.h = cover.t[0].naturalHeight;
 
 			(cover.o = function () {
 				$('#mark').height($(window).height());
-				$('#vibrant').height($(window).height());
 			})();
 
 			(cover.f = function () {
@@ -32,14 +31,14 @@ var Arknights = {
 					y = i * _h / _w;
 				}
 
-				$('#layer').css({
+				$('#bg-layer').css({
 					'width': _w + x,
 					'height': _h + y,
 					'marginLeft': -0.5 * x,
 					'marginTop': -0.5 * y
 				})
 
-				$('#cover').css({
+				$('#bg-img').css({
 					'width': _w + x,
 					'height': _h + y,
 				})
@@ -50,7 +49,7 @@ var Arknights = {
 				}
 
 				(function () {
-					var id = $('#cover')[0],
+					var id = $('#bg-img')[0],
 						w = cover.w,
 						h = cover.h,
 						_height = $(id).parent().height(),

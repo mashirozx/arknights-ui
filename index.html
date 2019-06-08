@@ -23,10 +23,49 @@
 
 <body>
 
+	<header>
+		<div class="level-box-container">
+			<!--flex box-->
+			<div class="level-box">
+				<div class="level-logo"></div>
+				<!--logo layer-->
+				<div class="user-level">
+					<!--underline layer-->
+					<div class="level-chart">
+						<div class="chart-bg" id="chart-bg"></div>
+						<div class="chart-pr" id="chart-pr"></div>
+					</div>
+				</div>
+				<div class="user-info"></div>
+			</div>
+		</div>
+	</header>
+
 	<div id="view-box" class="view-box">
 		<div id="mark" class="mark">
-			<div id="layer" class="layer" data-depth="0.1">
-				<img id="cover" class="cover" src="img/UI_HOME_FRONT_BKG.png">
+			<div id="bg-layer" class="layer" data-depth="0.0">
+				<img id="bg-img" class="cover" src="img/UI_HOME_FRONT_BKG.png">
+			</div>
+			<div id="char-arts-layer" class="layer" data-depth="0.05">
+				<div class="char perspective box">
+					<img src="img/char_180_amgoat_2_merged_271.png">
+				</div>
+			</div>
+			<div id="left-menu-layer" class="layer" data-depth="0.2">
+				<div class="left menu box">
+					<div class="container"></div>
+				</div>
+			</div>
+			<div id="right-menu-layer" class="layer" data-depth="0.2">
+				<div class="right menu box">
+					<div class="container">
+						<div class="pos-1"></div>
+						<div class="pos-2"></div>
+						<div class="pos-3"></div>
+						<div class="pos-4"></div>
+						<div class="pos-5"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -34,7 +73,6 @@
 	<script src="js/src/jquery.3.3.1.min.js"></script>
 	<script src="js/src/jquery.pjax.js"></script>
 	<script src="js/src/parallax.3.1.0.min.js"></script>
-	<!--<script src="js/src/Vibrant.min.js"></script>-->
 	<script src="js/scripts.js"></script>
 </body>
 
