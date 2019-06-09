@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC|Noto+Serif+SC|Rubik&display=swap');
+/*
+font-family: 'Rubik', sans-serif;
+font-family: 'Noto Serif SC', serif;
+font-family: 'Noto Sans SC', sans-serif;
+*/
+
 /* normalize */
 
 article,
@@ -50,7 +57,8 @@ header {
 .level-box {
 	height: 196px;
 	width: 172px;
-
+	transform: scale(0.8);
+	transform-origin: center left;
 }
 
 .level-logo {
@@ -59,8 +67,6 @@ header {
 	width: 172px;
 	background: url(../img/UI_HOME.png);
 	background-position: 494px 828px;
-	transform: scale(1);
-	transform-origin: center left;
 	filter: brightness(30%);
 }
 
@@ -74,9 +80,33 @@ header {
 	background-size: auto 3650%;
 }
 
-.chart-bg {}
+.chart-bg {
+	position: absolute;
+	margin: -79px auto auto 54px;
+	height: 115px;
+	width: 115px;
+	background: url(../img/UI_HOME.png);
+	background-position: 0px -295px;
+	background-size: auto 1103%;
+}
 
-.chart-pr {}
+.chart-pr {
+	position: absolute;
+	margin: -79px auto auto 54px;
+	height: 115px;
+	width: 115px;
+	background: url(../img/UI_HOME.png);
+	background-position: 488px -398px;
+	background-size: auto 1103%;
+}
+
+.level-num {
+	font-family: 'Rubik', sans-serif;
+	color: #fff;
+	font-size: 60px;
+	position: absolute;
+	margin: -54px 77px;
+}
 
 /* view box layout */
 .view-box {
@@ -112,14 +142,147 @@ header {
 	justify-content: flex-end;
 }
 
-.left.menu.box .container{
-	background-color: rgba(0, 0, 0, 0.5);
-	height: 30%;
-	width: 80%;
+.left.menu.box .container {
+	height: 200px;
+	width: 420px;
 	display: -webkit-flex;
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-between;
+}
+
+.left.menu.box .container .top {
+	height: 40%;
+	width: 100%
+}
+
+.left.menu.box .container .bottom {
+	height: 60%;
+	width: 100%;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+.left.menu.box .container .bottom .left {
+	padding: 5px;
+	width: 60%;
+	height: 100%
+}
+
+.left.menu.box .container .bottom .right {
+	width: 40%;
+	height: 100%
+}
+
+.left.menu.box .container .bottom .right .pos-1 {
+	height: 50%;
+	width: 100%;
+}
+
+.left.menu.box .container .bottom .right .pos-2 {
+	height: 50%;
+	width: 100%;
+}
+
+.left.menu.box .container .top .dialog {
+	background-color: rgba(0, 0, 0, .7);
+	padding: 10px 5px;
+	margin: 0 5px;
+	width: calc(100% - 20px);
+	height: auto;
+	font-family: 'Noto Sans SC', sans-serif;
+	color: #fff;
+	font-size: small;
+	line-height: initial;
+}
+
+.left.menu.box .container .top .dialog::before {
+	content: "VOICE";
+	background-color: rgba(255, 255, 255, .7);
+	font-family: 'Rubik', sans-serif;
+	color: #000;
+	position: absolute;
+	margin: -15px -10px;
+	width: 100px;
+	padding: 0 5px;
+}
+
+.left.menu.box .container .bottom .left::before {
+	content: "";
+	height: 24px;
+	width: 140px;
+	background: url(../img/UI_HOME.png);
+	background-position: -147px 1913px;
+	;
+	background-size: auto 6000%;
+	position: absolute;
+	margin: -5px;
+}
+
+.left.menu.box .container .bottom .left .activity-img {
+	height: 115px;
+	width: 251px;
+	background: url(../img/UI_HOME_ACTIVITY_BANNER_ZONE.png);
+	background-position: -14px -38px;
+	background-size: 238%;
+}
+
+.left.menu.box .container .bottom .right .pos-1 .friends {
+	background-color: #424242;
+	opacity: .9;
+	margin: 5px 5px 2.5px 5px;
+	width: calc(100% - 10px);
+	height: calc(100% - 7.5px);
+}
+
+
+.left.menu.box .container .bottom .right .pos-1 .friends .icon {
+	height: 35px;
+	width: 35px;
+	background: url(../img/UI_HOME.png);
+	background-position: -69px -26px;
+	background-size: auto 1800%;
+	position: absolute;
+	margin: 8px;
+}
+
+.left.menu.box .container .bottom .right .pos-1 .friends .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 900;
+	text-align: right;
+	padding: 13px;
+}
+
+.left.menu.box .container .bottom .right .pos-2 .information {
+	background-color: #e9e9e9;
+	opacity: .9;
+	margin: 2.5px 5px 5px 5px;
+	width: calc(100% - 10px);
+	height: calc(100% - 7.5px);
+}
+
+.left.menu.box .container .bottom .right .pos-2 .information .icon {
+	height: 35px;
+    width: 35px;
+    background: url(../img/UI_HOME.png);
+    background-position: -195px -897px;
+    background-size: auto 1750%;
+    position: absolute;
+    margin: 8px;
+    filter: invert(30%);
+}
+
+.left.menu.box .container .bottom .right .pos-2 .information .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #323232;
+	font-size: 25px;
+	font-weight: 900;
+	text-align: right;
+	padding: 13px;
 }
 
 /* right perspective */
@@ -130,7 +293,7 @@ header {
 	transform: perspective(30em) rotateY(-10deg) scale(0.9);
 }
 
-.right.menu.box .container{
+.right.menu.box .container {
 	background-color: rgba(0, 0, 0, 0.5);
 	height: 100%;
 	width: 100%;
@@ -144,6 +307,7 @@ header {
 .char.perspective.box {
 	width: 80%;
 }
+
 .char.perspective.box img {
 	width: 100%
 }
