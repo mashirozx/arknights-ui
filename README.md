@@ -1,1 +1,20 @@
-# arknights-ui
+# Arknights UI：CSS 复刻明日方舟主界面
+![screenshot](screenshot.png)
+
+## Demo
+<https://mashiro.top/arknights-ui/>
+
+## IDEA
+本来只是想做个人物立绘挂上一个日历做壁纸的，然后顺手把按键也做了上去，感觉这么多键位可以开发不少功能呢。
+
+## 立绘
+拆包拆出了全部人物立绘，已上传，应该会长期更新，立绘下载：<https://share.2heng.xin/?share/folder&user=1&sid=vRtSdN3p> 提取密码: U9HIc
+
+## 其他
+本项目及其衍生作品禁止除本作者外任何人发布到 Wallpaper Engine 创意工坊，占坑向。顺便求交换情报：`Dr.` Mashiro#3731
+
+## 版权相关
+界面贴图素材都是游戏逆向出来的，仅供学习使用，禁止商用。
+
+## License
+© [Mashiro](https://github.com/mashirozx/), Released under the [MIT](https://github.com/mashirozx/arknights-ui/blob/master/LICENSE) License.

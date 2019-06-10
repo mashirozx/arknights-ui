@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC|Noto+Serif+SC|Rubik&display=swap');
-/*
-font-family: 'Rubik', sans-serif;
-font-family: 'Noto Serif SC', serif;
-font-family: 'Noto Sans SC', sans-serif;
-*/
+/*!
+ * Author: Mashiro
+ * Site: https://2heng.xin
+ * License: MIT
+ */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:500,700,900|Noto+Serif+SC:500,700,900&display=swap&subset=chinese-simplified');
 
 /* normalize */
 
@@ -44,7 +44,28 @@ a:hover {
 header {
 	position: fixed;
 	height: 100%;
-	z-index: 5;
+	z-index: 1;
+	pointer-events: none
+}
+
+.author {
+	font-family: 'Noto Sans SC', sans-serif;
+    color: #fff;
+    font-size: 3vh;
+    font-weight: 500;
+    pointer-events: auto;
+    margin: 10px;
+    position: fixed;
+}
+
+.author a {
+	color: #fff
+}
+
+.social-link {
+	display: inline-block;
+	height: 3vh;
+	width: 3vh;
 }
 
 .level-box-container {
@@ -57,7 +78,8 @@ header {
 .level-box {
 	height: 196px;
 	width: 172px;
-	transform: scale(0.8);
+	transform: scale(1);
+	/*  adapter */
 	transform-origin: center left;
 }
 
@@ -101,17 +123,37 @@ header {
 }
 
 .level-num {
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Noto Sans SC', sans-serif;
 	color: #fff;
 	font-size: 60px;
+	font-weight: 500;
 	position: absolute;
-	margin: -54px 77px;
+	margin: -60px 80px;
+}
+
+.user-info .name {
+	font-family: 'Noto Sans SC', sans-serif;
+	color: #fff;
+	font-size: 33px;
+	font-weight: 500;
+	position: absolute;
+	margin: 134px 62px;
+}
+
+.user-info .id {
+	font-family: 'Noto Sans SC', sans-serif;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 500;
+	position: absolute;
+	margin: 171px 72px;
+	width: 100%;
 }
 
 /* view box layout */
 .view-box {
 	width: 100%;
-	height: 100%
+	height: 100%;
 }
 
 
@@ -130,7 +172,20 @@ header {
 	max-width: none;
 }
 
+.layer {
+	pointer-events: none
+}
+
+.menu.box {
+	pointer-events: initial
+}
+
 /* left perspective */
+/* prefix */
+#left-menu-layer {
+	bottom: 0 !important;
+	top:auto !important
+}
 .left.menu.box {
 	width: 50vw;
 	height: 98vh;
@@ -149,6 +204,9 @@ header {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-between;
+	transform: scale(1);
+	/* adapter */
+	transform-origin: bottom left;
 }
 
 .left.menu.box .container .top {
@@ -194,17 +252,20 @@ header {
 	height: auto;
 	font-family: 'Noto Sans SC', sans-serif;
 	color: #fff;
-	font-size: small;
+	font-size: 13px;
+	font-weight: 500;
 	line-height: initial;
 }
 
 .left.menu.box .container .top .dialog::before {
 	content: "VOICE";
 	background-color: rgba(255, 255, 255, .7);
-	font-family: 'Rubik', sans-serif;
+	font-family: 'Noto Sans SC', sans-serif;
+	font-size: 10px;
+	font-weight: 500;
 	color: #000;
 	position: absolute;
-	margin: -15px -10px;
+	margin: -18px -10px;
 	width: 100px;
 	padding: 0 5px;
 }
@@ -215,7 +276,6 @@ header {
 	width: 140px;
 	background: url(../img/UI_HOME.png);
 	background-position: -147px 1913px;
-	;
 	background-size: auto 6000%;
 	position: absolute;
 	margin: -5px;
@@ -267,13 +327,13 @@ header {
 
 .left.menu.box .container .bottom .right .pos-2 .information .icon {
 	height: 35px;
-    width: 35px;
-    background: url(../img/UI_HOME.png);
-    background-position: -195px -897px;
-    background-size: auto 1750%;
-    position: absolute;
-    margin: 8px;
-    filter: invert(30%);
+	width: 35px;
+	background: url(../img/UI_HOME.png);
+	background-position: -195px -897px;
+	background-size: auto 1750%;
+	position: absolute;
+	margin: 8px;
+	filter: invert(30%);
 }
 
 .left.menu.box .container .bottom .right .pos-2 .information .text {
@@ -286,14 +346,27 @@ header {
 }
 
 /* right perspective */
+/* prefix */
+#right-menu-layer {
+	right: 0 !important;
+	left: auto !important;
+	bottom: 0 !important;
+	top:auto !important
+}
+
 .right.menu.box {
-	width: 50vw;
-	height: 98vh;
-	margin: 0 auto auto 48vw;
+	width: 783px;
+	height: 640px;
+	/*
+	margin: 0 auto auto calc(51vw - 40px);
+	*/
+	float: right;
+	margin: 0 -80px auto auto;
 	transform: perspective(30em) rotateY(-10deg) scale(0.9);
 }
 
-.right.menu.box .container {
+.right.menu.box .popup {
+	position: absolute;
 	background-color: rgba(0, 0, 0, 0.5);
 	height: 100%;
 	width: 100%;
@@ -301,6 +374,595 @@ header {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-between;
+	display: none
+}
+
+
+.right.menu.box .container {
+	height: 640px;
+	width: 783px;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	transform: scale(1);
+	/* adapter */
+	transform-origin: bottom right;
+}
+
+.right.menu.box .container .pos-1 {
+	height: 80px;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+}
+
+.right.menu.box .container .pos-1 .top {
+	height: 35%;
+	width: auto;
+	margin: 0 0 0 80px;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+}
+
+.right.menu.box .container .pos-1 .top .time {
+	color: #fff;
+	font-family: 'Noto Sans SC', sans-serif;
+	font-size: 18px;
+	white-space: nowrap;
+	margin: 0 10px
+}
+
+.right.menu.box .container .pos-1 .top .battery {
+	margin-left: 10px;
+	height: 20px;
+	width: 34px;
+	background: url(../img/UI_HOME.png);
+	background-position: 0px -34px;
+	background-size: auto 4500%;
+}
+
+.right.menu.box .container .pos-1 .top .line-left {
+	width: 60px;
+	height: 3px;
+	margin-top: 8px;
+	background-color: #fff;
+}
+
+.right.menu.box .container .pos-1 .top .line-right {
+	width: 500px;
+	height: 3px;
+	margin-top: 8px;
+	background-color: #fff;
+}
+
+.right.menu.box .container .pos-1 .bottom {
+	height: 65%;
+}
+
+.right.menu.box .container .pos-1 .bottom .bg {
+	background-color: rgba(0, 0, 0, .2);
+	margin-top: 5px;
+	height: 40px;
+	width: 100%
+}
+
+.right.menu.box .container .pos-1 .bottom .status {
+	position: absolute;
+	margin: -45px 0 0 80px;
+	height: 50px;
+	width: 100%;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+}
+
+.right.menu.box .container .pos-1 .bottom .status .item {
+	height: 100%;
+	margin: 0 20px 0 0;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center
+}
+
+.right.menu.box .container .pos-1 .bottom .status .item .icon {}
+
+.right.menu.box .container .pos-1 .bottom .status .item.money .icon {
+	width: 80px;
+	height: 50px;
+	background: url(../img/UI_HOME.png);
+	background-position: -1225px -355px;
+	background-size: auto 6600%;
+}
+
+.right.menu.box .container .pos-1 .bottom .status .item.jasper .icon {
+	width: 50px;
+	height: 50px;
+	background: url(../img/UI_HOME.png);
+	background-position: -446px -1103px;
+	background-size: auto 5300%;
+}
+
+.right.menu.box .container .pos-1 .bottom .status .item.stone .icon {
+	width: 50px;
+	height: 50px;
+	background: url(../img/UI_HOME.png);
+	background-position: -1040px -464px;
+	background-size: auto 5200%;
+}
+
+.right.menu.box .container .pos-1 .bottom .status .item .amount {
+	color: #fff;
+	font-family: 'Noto Sans SC', sans-serif;
+	font-size: 33px;
+	white-space: nowrap;
+	margin: 0 10px
+}
+
+.right.menu.box .container .pos-1 .bottom .status .item .more {
+	width: 36px;
+	height: 36px;
+	background: url(../img/UI_HOME.png);
+	background-position: -732px -595px;
+	background-size: auto 5800%;
+}
+
+.right.menu.box .container .pos-2 {
+	height: 200px;
+}
+
+.right.menu.box .container .pos-2 .intellect {
+	background-color: #fdfdfb;
+	opacity: .9;
+	height: calc(100% - 20px);
+	width: 800px;
+	margin: 8px 0 0 80px;
+}
+
+.right.menu.box .container .pos-2 .intellect::after {
+	content: "";
+	background-color: #ff5e19;
+	opacity: .9;
+	height: 6px;
+	width: 310px;
+	margin: -3px 0 0 230px;
+	position: absolute;
+}
+
+.right.menu.box .container .pos-2 .intellect .icon {
+	margin-top: 15.5px;
+	margin-left: 360px;
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	background: url(../img/UI_HOME.png);
+	background-position: -588px -751px;
+	background-size: auto 1600%;
+	filter: invert(20%);
+	opacity: .5
+}
+
+.right.menu.box .container .pos-2 .intellect .content {
+	height: 100%;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: flex-start
+}
+
+.right.menu.box .container .pos-2 .intellect .content .figure {
+	width: 195px;
+	height: 130px;
+	margin: 20.5px 0 0 10px;
+	background: url(../img/UI_HOME.png);
+	background-position: 0px -531px;
+	background-size: auto 1257%;
+}
+
+.right.menu.box .container .pos-2 .intellect .content .figure .value {
+	color: #333333;
+	font-family: 'Noto Sans SC', sans-serif;
+	font-size: 70px;
+	font-weight: 700;
+	text-align: right;
+	margin: 0 20px;
+	text-shadow: #8b8b8b 5px 5px 0px;
+}
+
+.right.menu.box .container .pos-2 .intellect .content .figure .total {
+	color: #fff;
+	font-family: 'Noto Sans SC', sans-serif;
+	font-size: 25px;
+	text-align: right;
+	margin: 15px 20px;
+}
+
+.right.menu.box .container .pos-2 .intellect .content .battle {
+	height: 100%;
+	width: 100px;
+	height: 130px;
+	margin: 20.5px 0 0 15px;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: flex-start
+}
+
+.right.menu.box .container .pos-2 .intellect .content .battle .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #323232;
+	font-size: 60px;
+	font-weight: 900;
+	white-space: nowrap
+}
+
+.right.menu.box .container .pos-2 .intellect .content .battle .current {
+	font-family: 'Noto Sans SC', sans-serif;
+	color: #fff;
+	background-color: #3c3c3c;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: 500;
+	white-space: nowrap;
+	padding: 3px;
+	margin: 2.5px 0;
+}
+
+.right.menu.box .container .pos-2 .intellect .content .battle .level {
+	font-family: 'Noto Sans SC', serif;
+	color: #3c3c3c;
+	font-size: 20px;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.right.menu.box .container .pos-3 {
+	height: 130px;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+}
+
+.right.menu.box .container .pos-3 .team {
+	background-color: #fff;
+	opacity: .9;
+	height: calc(100% - 20px);
+	width: 280px;
+	margin: 8px 0 0 40px;
+}
+
+.right.menu.box .container .pos-3 .team .icon {
+	width: 80px;
+	height: 80px;
+	background: url(../img/UI_HOME.png);
+	background-position: 354px -330px;
+	background-size: auto 1500%;
+	position: absolute;
+	margin: 13px 0 0 166px;
+	filter: invert(20%);
+	opacity: .5
+}
+
+.right.menu.box .container .pos-3 .team .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #323232;
+	font-size: 40px;
+	font-weight: 900;
+	white-space: nowrap;
+	margin: 15px;
+}
+
+.right.menu.box .container .pos-3 .member {
+	background-color: #ebeceb;
+	opacity: .9;
+	height: calc(100% - 20px);
+	width: 280px;
+	margin: 8px 0 0 16px;
+}
+
+.right.menu.box .container .pos-3 .member .icon {
+	width: 80px;
+	height: 80px;
+	background: url(../img/UI_HOME.png);
+	background-position: 296px -477px;
+	background-size: auto 1500%;
+	position: absolute;
+	margin: 13px 0 0 166px;
+	filter: invert(20%);
+	opacity: .5
+}
+
+.right.menu.box .container .pos-3 .member .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #323232;
+	font-size: 40px;
+	font-weight: 900;
+	white-space: nowrap;
+	margin: 15px;
+}
+
+.right.menu.box .container .pos-3 .member .desc {
+	font-family: 'Noto Sans SC', sans-serif;
+	color: #989898;
+	font-size: 20px;
+	font-weight: 500;
+	white-space: nowrap;
+	margin: -11px 15px;
+}
+
+.right.menu.box .container .pos-3 .blank {
+	background-color: #161919;
+	opacity: .9;
+	height: calc(100% - 20px);
+	width: 200px;
+	margin: 8px 0 0 16px
+}
+
+.right.menu.box .container .pos-4 {
+	height: 130px;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+
+}
+
+.right.menu.box .container .pos-4 .shop {
+	background-color: #05a7dc;
+	opacity: .9;
+	height: calc(100% - 20px);
+	width: 240px;
+	margin: 8px 0 0 120px;
+	border-right: 1px solid transparent;
+	border-image: -webkit-linear-gradient(#05a7dc, #454545, #05a7dc) 1;
+	border-image: -moz-linear-gradient(#05a7dc, #454545, #05a7dc) 1;
+	border-image: linear-gradient(#05a7dc, #454545, #05a7dc) 1;
+}
+
+.right.menu.box .container .pos-4 .shop .icon {
+	width: 93px;
+	height: 80px;
+	background: url(../img/UI_HOME.png);
+	background-position: 284px -360px;
+	background-size: auto 2000%;
+	position: absolute;
+	margin: 13px 0 0 136px;
+	opacity: .5;
+}
+
+.right.menu.box .container .pos-4 .shop .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #fff;
+	font-size: 40px;
+	font-weight: 900;
+	white-space: nowrap;
+	margin: 40px 0 0 60px;
+}
+
+.right.menu.box .container .pos-4 .gamble {
+	background-color: #05a7dc;
+	opacity: .9;
+	height: calc(100% - 20px);
+	width: 340px;
+	margin: 8px 0;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+}
+
+.right.menu.box .container .pos-4 .gamble .top {
+	background-color: #454545;
+	width: 330px;
+	height: 30px;
+	margin: 5px;
+}
+
+.right.menu.box .container .pos-4 .gamble .top .icon {
+	width: 20px;
+	height: 20px;
+	background: url(../img/UI_HOME.png);
+	background-position: -84px -138px;
+	background-size: auto 2000%;
+	position: absolute;
+	margin: 5px 0 0 5px;
+	opacity: .5
+}
+
+.right.menu.box .container .pos-4 .gamble .top .text {
+	font-family: 'Noto Sans SC', sans-serif;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	white-space: nowrap;
+	margin: 2px 0 0 30px;
+}
+
+.right.menu.box .container .pos-4 .gamble .bottom {
+	width: 330px;
+	height: 60px;
+	margin: 0 0 5px 5px;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+.right.menu.box .container .pos-4 .gamble .bottom .left {
+	width: 50%;
+	height: 100%;
+	border-right: 1px solid transparent;
+	border-image: -webkit-linear-gradient(#05a7dc, #454545, #05a7dc) 1;
+	border-image: -moz-linear-gradient(#05a7dc, #454545, #05a7dc) 1;
+	border-image: linear-gradient(#05a7dc, #454545, #05a7dc) 1;
+}
+
+.right.menu.box .container .pos-4 .gamble .bottom .left .icon {
+	width: 50px;
+	height: 50px;
+	background: url(../img/UI_HOME.png);
+	background-position: 276px -172px;
+	background-size: auto 1600%;
+	position: absolute;
+	margin: 5px 0 0 5px;
+	opacity: .5;
+}
+
+.right.menu.box .container .pos-4 .gamble .bottom .left .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 900;
+	white-space: nowrap;
+	margin: 10px 0 0 20px;
+}
+
+.right.menu.box .container .pos-4 .gamble .bottom .right {
+	width: 50%;
+	height: 100%
+}
+
+.right.menu.box .container .pos-4 .gamble .bottom .right .icon {
+	width: 50px;
+	height: 50px;
+	background: url(../img/UI_HOME.png);
+	background-position: 188px -228px;
+	background-size: auto 1650%;
+	position: absolute;
+	margin: 5px 0 0 5px;
+	opacity: .5;
+}
+
+.right.menu.box .container .pos-4 .gamble .bottom .right .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 900;
+	white-space: nowrap;
+	margin: 10px 0 0 20px;
+}
+
+.right.menu.box .container .pos-5 {
+	height: 130px;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+}
+
+.right.menu.box .container .pos-5 .task {
+	background-color: #fff;
+	opacity: .9;
+	height: calc(100% - 20px);
+	width: 240px;
+	margin: 8px 0 0 80px;
+}
+
+.right.menu.box .container .pos-5 .task::before {
+	content: "";
+	background-color: #ff5e19;
+	opacity: .9;
+	height: 6px;
+	width: 180px;
+	margin: -3px 0 0 30px;
+	position: absolute;
+}
+
+.right.menu.box .container .pos-5 .task .icon {
+	width: 72px;
+	height: 80px;
+	background: url(../img/UI_HOME.png);
+	background-position: -1px -90px;
+	background-size: auto 1800%;
+	position: absolute;
+	margin: 13px 0 0 136px;
+	opacity: .5;
+	filter: invert(30%);
+}
+
+.right.menu.box .container .pos-5 .task .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #323232;
+	font-size: 40px;
+	font-weight: 900;
+	white-space: nowrap;
+	margin: 15px;
+}
+
+.right.menu.box .container .pos-5 .infrastructure {
+	background-color: #ebeceb;
+	opacity: .9;
+	height: calc(100% - 20px);
+	width: 240px;
+	margin: 8px 0 0 16px;
+}
+
+.right.menu.box .container .pos-5 .infrastructure .icon {
+	width: 80px;
+	height: 80px;
+	background: url(../img/UI_HOME.png);
+	background-position: -69px -61px;
+	background-size: auto 1700%;
+	position: absolute;
+	margin: 13px 0 0 136px;
+	opacity: .5;
+	filter: invert(30%);
+}
+
+.right.menu.box .container .pos-5 .infrastructure .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #323232;
+	font-size: 40px;
+	font-weight: 900;
+	white-space: nowrap;
+	margin: 15px;
+}
+
+.right.menu.box .container .pos-5 .infrastructure .beta {
+	width: 40px;
+	height: 9px;
+	background: url(../img/UI_HOME.png);
+	background-position: -20px -34px;
+	background-size: 1700% auto;
+	position: absolute;
+	margin: -16px 0 0 15px;
+}
+
+.right.menu.box .container .pos-5 .warehouse {
+	background-color: #424242;
+	opacity: .9;
+	height: calc(100% - 20px);
+	width: 90px;
+	margin: 8px 0
+}
+
+.right.menu.box .container .pos-5 .warehouse .icon {
+	width: 50px;
+	height: 50px;
+	background: url(../img/UI_HOME.png);
+	background-position: 86px -472px;
+	background-size: auto 1700%;
+	position: absolute;
+	margin: 42px 0 0 22px;
+	opacity: .5;
+}
+
+.right.menu.box .container .pos-5 .warehouse .text {
+	font-family: 'Noto Serif SC', serif;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 900;
+	white-space: nowrap;
+	margin: 15px;
 }
 
 /* character perspective box */

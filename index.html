@@ -22,28 +22,38 @@
 </head>
 
 <body>
-
+	<!--
+	  -- Author: Mashiro
+	  -- Site: https://2heng.xin
+	  -- License: MIT
+	  -->
 	<header>
+		<div class="author">
+			
+			<a href="https://github.com/mashirozx/arknights-ui/" target="_blank"><img src="img/github.svg" class="social-link"> GitHub </a> <a href="https://weibo.com/2960337711" target="_blank"><img src="img/weibo.svg" class="social-link"> Weibo </a> <a href="https://2heng.xin/" target="_blank"><img src="img/wordpress.svg" class="social-link"> Blog </a>
+			
+		</div>
+		
 		<div class="level-box-container">
-			<!--flex box-->
-			<div class="level-box">
+			<div class="level-box" id="level-box-adapter">
 				<div class="level-logo"></div>
-				<!--logo layer-->
 				<div class="user-level">
-					<!--underline layer-->
 					<div class="level-chart">
 						<div class="chart-bg" id="chart-bg"></div>
 						<div class="chart-pr" id="chart-pr"></div>
 						<div class="level-num" id="level-num">45</div>
 					</div>
 				</div>
-				<div class="user-info"></div>
+				<div class="user-info">
+					<div class="name">Mashiro</div>
+					<div class="id">ID: 37040126</div>
+				</div>
 			</div>
 		</div>
 	</header>
 
 	<div id="view-box" class="view-box">
-		<div id="mark" class="mark">
+		<div id="mark" class="mark" data-pointer-events="true">
 			<div id="bg-layer" class="layer" data-depth="0.0">
 				<img id="bg-img" class="cover" src="img/UI_HOME_FRONT_BKG.png">
 			</div>
@@ -54,7 +64,7 @@
 			</div>
 			<div id="left-menu-layer" class="layer" data-depth="0.2">
 				<div class="left menu box">
-					<div class="container">
+					<div class="container" id="left-mune-adapter">
 						<div class="top">
 							<div class="dialog">为什么能察觉到前辈站在我身后？那是因为我感受到了前辈的温度~虽然我的视力听力都变差了，但其他感官还很敏锐哦~即使变成现在这个样子，我呀，可没那么容易被打倒的~</div>
 						</div>
@@ -82,12 +92,100 @@
 			</div>
 			<div id="right-menu-layer" class="layer" data-depth="0.2">
 				<div class="right menu box">
-					<div class="container">
-						<div class="pos-1"></div>
-						<div class="pos-2"></div>
-						<div class="pos-3"></div>
-						<div class="pos-4"></div>
-						<div class="pos-5"></div>
+					<div class="popup" id="right-mune-popup-adapter"></div>
+					<div class="container" id="right-mune-adapter">
+						<div class="pos-1">
+							<div class="top">
+								<div class="line-left"></div>
+								<div class="battery"></div>
+								<div class="time">2019/06/05 22:33</div>
+								<div class="line-right"></div>
+							</div>
+							<div class="bottom">
+								<div class="bg"></div>
+								<div class="status">
+									<div class="item money">
+										<div class="icon"></div>
+										<div class="amount">1000</div>
+									</div>
+									<div class="item jasper">
+										<div class="icon"></div>
+										<div class="amount">1000</div>
+										<div class="more"></div>
+									</div>
+									<div class="item stone">
+										<div class="icon"></div>
+										<div class="amount">1000</div>
+										<div class="more"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pos-2">
+							<div class="intellect">
+								<div class="icon"></div>
+								<div class="content">
+									<div class="figure">
+										<div class="value">12</div>
+										<div class="total">/122</div>
+									</div>
+									<div class="battle">
+										<div class="text">作战</div>
+										<div class="current">当前</div>
+										<div class="level">4-10 灯火将熄</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pos-3">
+							<div class="team">
+								<div class="icon"></div>
+								<div class="text">编队</div>
+							</div>
+							<div class="member">
+								<div class="icon"></div>
+								<div class="text">干员</div>
+								<div class="desc">角色管理</div>
+							</div>
+							<div class="blank"></div>
+						</div>
+						<div class="pos-4">
+							<div class="shop">
+								<div class="icon"></div>
+								<div class="text">采购中心</div>
+							</div>
+							<div class="gamble">
+								<div class="top">
+									<div class="icon"></div>
+									<div class="text">招募</div>
+								</div>
+								<div class="bottom">
+									<div class="left">
+										<div class="icon"></div>
+										<div class="text">公开招募</div>
+									</div>
+									<div class="right">
+										<div class="icon"></div>
+										<div class="text">干员寻访</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pos-5">
+							<div class="task">
+								<div class="icon"></div>
+								<div class="text">任务</div>
+							</div>
+							<div class="infrastructure">
+								<div class="icon"></div>
+								<div class="text">基建</div>
+								<div class="beta"></div>
+							</div>
+							<div class="warehouse">
+								<div class="icon"></div>
+								<div class="text">仓库</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -96,6 +194,7 @@
 
 	<script src="js/src/jquery.3.3.1.min.js"></script>
 	<script src="js/src/jquery.pjax.js"></script>
+	<script src="js/src/GYST.js"></script>
 	<script src="js/src/parallax.3.1.0.min.js"></script>
 	<script src="js/scripts.js"></script>
 </body>
