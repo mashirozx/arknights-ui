@@ -40,6 +40,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+a[href*="www.cnzz.com"] {
+  display: none
+}
+
 /* header */
 header {
 	position: fixed;
