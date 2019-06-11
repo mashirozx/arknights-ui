@@ -50,12 +50,12 @@ header {
 
 .author {
 	font-family: 'Noto Sans SC', sans-serif;
-    color: #fff;
-    font-size: 3vh;
-    font-weight: 500;
-    pointer-events: auto;
-    margin: 10px;
-    position: fixed;
+	color: #fff;
+	font-size: 3vh;
+	font-weight: 500;
+	pointer-events: auto;
+	margin: 10px;
+	position: fixed;
 }
 
 .author a {
@@ -184,8 +184,9 @@ header {
 /* prefix */
 #left-menu-layer {
 	bottom: 0 !important;
-	top:auto !important
+	top: auto !important
 }
+
 .left.menu.box {
 	width: 50vw;
 	height: 98vh;
@@ -351,7 +352,7 @@ header {
 	right: 0 !important;
 	left: auto !important;
 	bottom: 0 !important;
-	top:auto !important
+	top: auto !important
 }
 
 .right.menu.box {

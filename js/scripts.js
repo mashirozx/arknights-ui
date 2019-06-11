@@ -7,12 +7,12 @@
 
 var Arknights = {
 	F_NORMALIZE: function () {
+		this.F_SCREEN_SCROLL_ALERT();
 		this.F_WINDOW_ONLOAD_EVENT();
 	},
 	F_WINDOW_ONLOAD_EVENT: function () {
 
 		$(window).on('load', function () {
-			Arknights.F_SCREEN_SCROLL_ALERT();
 			Arknights.F_SCREEN_ADAPTER();
 			Arknights.F_BG_PARRALAX_INI();
 		});
@@ -115,9 +115,11 @@ var Arknights = {
 		}
 	},
 	F_SCREEN_SCROLL_ALERT: function () {
-		GYST.landScape({
-			mode: 'landscape'
-		});
+		if (GYST) {
+			GYST.landScape({
+				mode: 'landscape',
+			});
+		}
 	},
 };
 
