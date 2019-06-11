@@ -9,6 +9,7 @@ var Arknights = {
 	F_NORMALIZE: function () {
 		this.F_SCREEN_SCROLL_ALERT();
 		this.F_WINDOW_ONLOAD_EVENT();
+		this.F_SHOW_TIME();
 	},
 	F_WINDOW_ONLOAD_EVENT: function () {
 
@@ -121,6 +122,28 @@ var Arknights = {
 			});
 		}
 	},
+	F_SHOW_TIME: function () {
+		setInterval(function () {
+			var now = new Date(),
+				year = now.getFullYear(),
+				month = now.getMonth(),
+				day = now.getDay(),
+				hour = now.getHours(),
+				minute = now.getMinutes(),
+				checkTime = function (i) { // add a zero in front of numbers<10
+					if (i < 10) {
+						i = "0" + i;
+					}
+					return i;
+				};
+			month = checkTime(month);
+			day = checkTime(day);
+			hour = checkTime(hour);
+			minute = checkTime(minute);
+			var str = year + "/" + month + "/" + day + " " + hour + ":" + minute;
+			$('#time').text(str);
+		}, 500);
+	}
 };
 
 (function () {
