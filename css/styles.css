@@ -980,9 +980,9 @@ header {
 /* character perspective box */
 #char-arts-layer {
 	left: 70px !important;
-    top: -70px !important;
+	top: -70px !important;
 }
-	
+
 .char.perspective.box {
 	width: 80%;
 }
