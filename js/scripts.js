@@ -7,7 +7,7 @@
 
 var Arknights = {
 	F_NORMALIZE: function () {
-		this.F_SCREEN_SCROLL_ALERT();
+		this.F_SCREEN_ROTATE_ALERT();
 		this.F_WINDOW_ONLOAD_EVENT();
 		this.F_SHOW_TIME();
 	},
@@ -115,7 +115,7 @@ var Arknights = {
 			$('.right.menu.box').css('margin-right', -80 * _h);
 		}
 	},
-	F_SCREEN_SCROLL_ALERT: function () {
+	F_SCREEN_ROTATE_ALERT: function () {
 		if (GYST) {
 			GYST.landScape({
 				mode: 'landscape',
