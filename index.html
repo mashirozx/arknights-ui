@@ -50,6 +50,16 @@
 			z-index: 999;
 		}
 
+		.loader-layer .tips {
+			font-family: 'Noto Sans SC', sans-serif;
+			color: #fff;
+			font-size: 2vh;
+			font-weight: 500;
+			pointer-events: auto;
+			margin: 10px;
+			position: fixed;
+		}
+
 		.loader {
 			width: calc(100% + 100px);
 			overflow-x: hidden;
@@ -125,6 +135,7 @@
 	  -->
 
 	<div class="loader-layer" id="loader-layer">
+		<div class="tips">Tips: 如果加载速度过慢可以使用代理（本页托管于 GitHub Pages）。</div>
 		<div class="loader" id="loader">
 			<div class="bar">
 				<div class="circle"></div>

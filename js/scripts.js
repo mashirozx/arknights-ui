@@ -15,7 +15,7 @@ var Arknights = {
 		$(window).on('load', function () {
 			Arknights.F_SCREEN_ADAPTER();
 			Arknights.F_BG_PARRALAX_INI();
-			$('#loader-layer').css('display', 'none');
+			//$('#loader-layer').css('display', 'none');
 		});
 	},
 	F_BG_PARRALAX_INI: function () {
@@ -126,8 +126,8 @@ var Arknights = {
 		setInterval(function () {
 			var now = new Date(),
 				year = now.getFullYear(),
-				month = now.getMonth(),
-				day = now.getDay(),
+				month = now.getMonth() + 1,
+				day = now.getDate(),
 				hour = now.getHours(),
 				minute = now.getMinutes(),
 				checkTime = function (i) { // add a zero in front of numbers<10
