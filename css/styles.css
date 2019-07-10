@@ -41,7 +41,7 @@ a:hover {
 }
 
 a[href*="www.cnzz.com"] {
-  display: none
+	display: none
 }
 
 /* header */
@@ -254,11 +254,17 @@ header {
 	padding: 10px 5px;
 	margin: 0 5px;
 	width: calc(100% - 20px);
-	height: auto;
+	height: 57px;
 	font-family: 'Noto Sans SC', sans-serif;
 	color: #fff;
 	font-size: 13px;
 	font-weight: 500;
+	line-height: 57px;
+}
+
+.left.menu.box .container .top .dialog span {
+	display: inline-block;
+	vertical-align: middle;
 	line-height: initial;
 }
 
@@ -273,6 +279,7 @@ header {
 	margin: -18px -10px;
 	width: 100px;
 	padding: 0 5px;
+	line-height: initial;
 }
 
 .left.menu.box .container .bottom .left::before {
@@ -971,6 +978,11 @@ header {
 }
 
 /* character perspective box */
+#char-arts-layer {
+	left: 70px !important;
+    top: -70px !important;
+}
+	
 .char.perspective.box {
 	width: 80%;
 }
