@@ -15,7 +15,7 @@ var Arknights = {
 		$(window).on('load', function () {
 			Arknights.F_SCREEN_ADAPTER();
 			Arknights.F_BG_PARRALAX_INI();
-			//$('#loader-layer').css('display', 'none');
+			$('#loader-layer').css('display', 'none');
 		});
 	},
 	F_BG_PARRALAX_INI: function () {
