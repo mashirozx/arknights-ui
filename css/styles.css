@@ -990,3 +990,6 @@ header {
 .char.perspective.box img {
 	width: 100%
 }
+
+#canvas-dust {
+	pointer-events: none}
